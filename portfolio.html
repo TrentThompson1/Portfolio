@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trent Thompson</title>
+  <style>
+    body {
+      background-color: rgb(24, 24, 24);
+      color: rgb(184, 184, 184);
+      font-size: 20px;
+    }
+    header {
+      text-align: center;
+    }
+    h1 {
+      text-align: center;
+    }
+    h2 {
+      color: rgb(202, 202, 202);
+    }
+
+    section {
+      background-color: rgb(44, 44, 44);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgb(0, 0, 0);
+      
+    }
+    #about, #skills {
+      opacity: 0;
+      transform: translateY(-75px);
+      animation: fadeInDown 1s ease forwards;
+    }
+    #project1, #project2 {
+      opacity: 0;
+      transform: translateY(75px);
+      animation: fadeInUp 1s ease forwards;
+    }
+    #education {
+      opacity: 0;
+      transform: translateX(-75px);
+      animation: fadeInRight 1s ease forwards;
+    }
+    #quote {
+      opacity: 0;
+      transform: translateX(75px);
+      animation: fadeInLeft 1s ease forwards;
+    }
+
+    .navbar-container {
+      text-align: center;
+      padding-top: 10px;
+    }
+    .nav-button {
+      padding: 10px;
+      width: 100px;
+      background-color: rgb(126, 126, 126);
+      cursor: pointer;
+      border-radius: 12px;
+    }
+    .nav-button:hover {
+      background-color: rgb(165, 165, 165);
+    }
+    .nav-button.active {
+      color: white;
+    }
+
+    .tab {
+      display: none;
+    }
+    .tab.active {
+      display: block;
+    }
+
+    .butt {
+      display: block;
+      width:60%;
+      margin: 10px 0;
+      padding: 10px;
+      border: none;
+      background-color: gray;
+      color: white;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      text-align: center;
+    }
+    .butt:hover {
+      background-color: rgb(146, 146, 146);
+    }
+
+    .center {
+      display: flex;
+      justify-content: center;
+    }
+
+    .links {
+      color: rgb(7, 123, 218);
+      text-decoration: none;
+    }
+
+    .head {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 15px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-bottom: 30px;
+    }
+    .grid section:nth-child(1), .grid section:nth-child(2) {
+      grid-column: span 3;
+    }
+    .grid section:nth-child(3), .grid section:nth-child(4), .grid section:nth-child(5) {
+      grid-column: span 2;
+    }
+    .grid section:nth-child(6), .grid section:nth-child(7) {
+      grid-column: span 3;
+    }
+    @media (max-width: 1250px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .grid section {
+        grid-column: 1 / -1;
+      }
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeInDown {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeInLeft {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    @keyframes fadeInRight {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="navbar-container">
+    <button class="nav-button active" onclick="nav(this, 'home')">Home</button>
+    <button class="nav-button" onclick="nav(this, 'contact')">Contact Me</button>
+  </div>
+
+  <div id="home" class="tab active">
+    <header>
+      <div class="head">
+        <img src="pics/Trent_Thompson_PFP.jpg" alt="Picture of Me" style="height: 60px; 
+        width: 50px; border-radius: 15%; border: 2px solid rgb(0, 0, 0);">
+        <h1>Trent Thompson</h1>
+        <a href="https://github.com/TrentThompson1">
+          <img src="pics/gut.png" alt="github" style="height: 30px;">
+        </a>
+      </div>
+    </header>
+    
+    <div class="grid">
+      <section id="about">
+        <h2>About Me</h2>
+        
+        <p>
+          Hello! My name is <strong>Trent Thompson</strong>, and I am currently a student
+          pursuing a degree in <a class="links" href="https://cs.vt.edu/">Computer Science</a> at
+          <a class="links" href="https://vt.edu/">Virginia Tech</a>. Throughout my academic journey, I have
+          gained expertise in software development and web development.
+        </p>
+        <p>
+          My goal is to leverage my technical knowledge and creativity to contribute effectively as
+          a Software Engineer. I am committed to continuous learning and innovation.
+        </p>
+      </section>
+      <section id="skills">
+        <h2>Skills</h2>
+    
+        <ul>
+          <li>Strong foundation in programming languages such as Java, Python, HTML, and C.</li>
+          <li>Docker, Git, Pygame, Flask</li>
+          <li>Excellent teamwork and communication skills.</li>
+        </ul>
+
+      </section>
+      <section id="education">
+        <h2>Education</h2>
+        <p>Virginia Tech <span style="font-size: 16px;">(2022 - 2026)</span></p>
+        <p>Major: Computer Science</p>
+        <p>GPA: 3.6</p>
+        <p>Minor: Mathematics</p>
+        <p>Relevant Coursework: Computer Systems, Data Structures and Algorithms,
+           Calculus III, Discrete Mathematics, Human-Computer Interaction</p>
+      </section>
+      <section id="pic">
+        <img src="pics/VT2.jpg" alt="Campus" style="height: 400px;width: 325px; 
+        display: block; margin: 0 auto;">
+      </section>
+      <section id="quote">
+        <p style="font-size: 38px;">“Darkness cannot drive out darkness: only light can do 
+          that. Hate cannot drive out hate: only love can do that.”― Martin Luther King Jr.</p>
+      </section>
+      <section id="project1">
+        <h2>
+          Currency Converter - Python, React.js
+        </h2>
+        <ul>
+          <li>Developed a full-stack currency converter with Flask for back-end API integration and React.js for a dynamic front-end.</li>
+          <li>Integrated ExchangeRate API to retrieve real-time currency exchange rates and handle currency efficiently.</li>
+          <li>Created a user-friendly interface with real-time results and robust error handling.</li>
+        </ul>
+      </section>
+
+      <section id="project2">
+        <h2>
+          Pong Game - Python
+        </h2>
+        <ul>
+          <li>Implemented game mechanics including paddle movement, ball collision detection, and scoring system.</li>
+          <li>Applied object-oriented programming (OOP) principles to organize game components and logic.</li>
+          <li>Utilized the Pygame library to handle real-time rendering and input handling.</li>
+        </ul>
+      </section>
+    </div>
+    
+  </div>
+
+  <div id="contact" class="tab">
+    <p class="center">Email: trentthompson@vt.edu</p>
+    <div class="center">
+      <a href="https://www.linkedin.com/in/trent-thompson75/" class="butt">LinkedIn</a>
+    </div>
+    
+  </div>
+
+
+  <script>
+    function nav(button, ID) {
+      document.querySelectorAll('.nav-button').forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      document.getElementById(ID).classList.add('active');
+    }
+
+  </script>
+  
+</body>
+
+</html>
